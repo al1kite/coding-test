@@ -1,8 +1,11 @@
 import java.util.*;
 
-public class Solution {
+class Solution {
     public int solution(int n) {
-        if (n < 1) return 0; 
-         return (n % 10) + solution(n / 10); 
+        int sum = 0;
+        for (char c : String.valueOf(n).toCharArray()) {
+            sum += c - '0'; // 문자를 정수로 변환하여 합산
+        }
+        return sum;
     }
 }
